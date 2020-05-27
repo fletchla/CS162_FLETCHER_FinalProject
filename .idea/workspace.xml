@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="737c13c4-1bdc-4d77-a09a-24de63c2d3a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ParticleSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Creature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Human.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SpawnPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WorldCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Zombie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Particle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Particle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +41,20 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="CS162_FLETCHER_FinalProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -48,17 +66,47 @@
       <option name="presentableId" value="Default" />
       <updated>1590544768146</updated>
     </task>
+    <task id="LOCAL-00001" summary="added files given for particle and particle system">
+      <created>1590547496854</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590547496854</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="added files given for particle and particle system" />
+    <option name="LAST_COMMIT_MESSAGE" value="added files given for particle and particle system" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="920" y="117" key="CommitChangelistDialog2" timestamp="1590546336048">
+    <state x="920" y="117" key="CommitChangelistDialog2" timestamp="1590547496381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="920" y="117" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1280.680@0.0.1920.1040" timestamp="1590546336048" />
+    <state x="920" y="117" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1280.680@0.0.1920.1040" timestamp="1590547496381" />
     <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1590547324329">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1280.680@0.0.1920.1040" timestamp="1590547324329" />
+    <state width="916" height="279" key="GridCell.Tab.0.bottom" timestamp="1590550358408">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.680@0.0.1920.1040" timestamp="1590550358408" />
+    <state width="916" height="279" key="GridCell.Tab.0.center" timestamp="1590550358408">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.680@0.0.1920.1040" timestamp="1590550358408" />
+    <state width="916" height="279" key="GridCell.Tab.0.left" timestamp="1590550358408">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.680@0.0.1920.1040" timestamp="1590550358408" />
+    <state width="916" height="279" key="GridCell.Tab.0.right" timestamp="1590550358408">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.680@0.0.1920.1040" timestamp="1590550358408" />
     <state x="651" y="96" key="SettingsEditor" timestamp="1590547332666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
