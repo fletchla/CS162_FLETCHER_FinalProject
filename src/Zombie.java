@@ -1,26 +1,10 @@
-import processing.core.PApplet;
-
 public class Zombie extends Creature {
-    private double radius;
+    public Zombie() {
+        super();
+        setupSpawnPoint(10, 50);
+        setupColor(0, 150, 200, 255, 0, 150);
+        setyVelocity((float)0.5);
 
-    public Zombie(SpawnPoint center, double radius) {
-        super(center);
-        this.radius = radius;
     }
 
-    public double computeArea() {
-        return Math.PI*Math.pow(radius,2);
-    }
-
-    public double getPerimeter() {
-        return 2*Math.PI*radius;
-    }
-
-    public void draw(PApplet p){
-        p.circle(
-                (float) this.getPosition().getX(),
-                (float) this.getPosition().getY(),
-                (float) this.radius
-        );
-    }
 }
