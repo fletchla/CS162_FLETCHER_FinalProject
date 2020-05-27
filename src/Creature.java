@@ -3,7 +3,6 @@ import processing.core.PApplet;
 abstract class Creature extends PApplet {
 
     private SpawnPoint position;
-    private static int numShapes;
     private double radius;
     private int colour; //color reserved in Processing. who knows tf in here
     float xVelocity;
@@ -13,7 +12,6 @@ abstract class Creature extends PApplet {
         this.position = new SpawnPoint(0, 0);
         this.colour = 0;
         this.radius = 50;
-        ++numShapes;
     }
 
     public SpawnPoint getPosition() {
@@ -21,9 +19,6 @@ abstract class Creature extends PApplet {
     }
     public void setPosition(SpawnPoint position) {
         this.position = position;
-    }
-    public static int getNumShapes(){
-        return numShapes;
     }
 
 
@@ -38,8 +33,8 @@ abstract class Creature extends PApplet {
     }
 
     void move() {
-        this.position.setXRelative(this.xVelocity);
-        this.position.setYRelative(this.yVelocity);
+        this.position.setXRelative(this.getxVelocity() +  getJitter());
+        this.position.setYRelative(this.getyVelocity() +  getJitter());
     }
 
     public void setupSpawnPoint(float min, float max) {
@@ -78,5 +73,9 @@ abstract class Creature extends PApplet {
 
     public void setyVelocity(float yVelocity) {
         this.yVelocity = yVelocity;
+    }
+
+    public float getJitter(){
+        return (float)random((float)-5, (float)5);
     }
 }
