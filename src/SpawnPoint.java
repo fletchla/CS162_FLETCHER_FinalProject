@@ -1,26 +1,30 @@
 public class SpawnPoint {
 
-    private double x;
-    private double y;
+    private float x;
+    private float y;
 
-    public SpawnPoint(double x, double y) {
+    public SpawnPoint(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public double getX() {
+    public float getX() {
         return x;
     }
 
-    public double getY() {
+    public float getY() {
         return y;
     }
 
-    public void setX(double x) {
+    public void setX(float x) {
         this.x = x;
     }
+    public void setXRelative(float x) {
+        this.x += x;
+    }
 
-    public void setY(double y) {
+    public void setY(float y) {
         this.y = y;
     }
+    public void setYRelative(float y) { this.y += y; }
 }
