@@ -78,4 +78,12 @@ abstract class Creature extends PApplet {
     public float getJitter(){
         return (float)random((float)-5, (float)5);
     }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
 }
