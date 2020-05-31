@@ -34,6 +34,7 @@ public class WorldCreator extends PApplet {
             zombie.draw(this);
         }
 
+        detectCollisions();
         drawCounters();
 
     }
@@ -50,4 +51,37 @@ public class WorldCreator extends PApplet {
         text("Humans: " + this.humans.size(), 250, 450);
 
     }
+
+    public void detectCollisions() {
+        //if (this.zombies.size() > 0) {
+            for (int i = this.humans.size() - 1; i >= 0; i--) {
+                for (int j = this.zombies.size() - 1; j >= 0; j--) {
+                    Human h = this.humans.get(i);
+                    Zombie z = this.zombies.get(i);
+
+                    if (this.isClose(h,z) == true) {
+                        //they collide and put shit here
+                        System.out.println("They have collided"); //we talked about typewriters
+                    }
+                }
+            }
+        //}
+    }
+
+    public boolean isClose(Human h, Zombie z) {
+        float distance = dist(
+                h.getPosition().getX(),
+                h.getPosition().getY(),
+                z.getPosition().getX(),
+                z.getPosition().getY()
+        );
+        double sizes = (h.getRadius()) + (z.getRadius()); //combined radius of zombie and beaver
+        if (distance <= sizes) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
