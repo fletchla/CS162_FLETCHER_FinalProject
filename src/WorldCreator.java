@@ -61,6 +61,18 @@ public class WorldCreator extends PApplet {
 
                     if (this.isClose(h,z) == true) {
                         //they collide and put shit here
+                        int chance = (int)random(0,100);
+                        if (chance < 45) {
+                            this.zombies.remove(i);
+                        }
+                        else if (chance < 60) {
+                            SpawnPoint p = h.getPosition();
+                            this.humans.remove(i);
+                            Zombie z2 = new Zombie();
+                            this.zombies.add(z2);
+                            z2.setPosition(p);
+                            break;
+                        }
                         System.out.println("They have collided"); //we talked about typewriters
                     }
                 }
