@@ -80,7 +80,7 @@ abstract class Creature {
     }
 
     public float getJitter(){
-        return w.random((float)-3, (float)3);
+        return w.random((float)-1, (float)1);
     }
 
     public double getRadius() {
