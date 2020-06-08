@@ -15,11 +15,11 @@ public class WorldCreator extends PApplet {
         int zombieCount = this.getInitialPopulation();
 
         for(int i = 0; i < humanCount; i++) {
-            humans.add(new Human());
+            humans.add(new Human(this));
         }
 
         for(int i = 0; i < zombieCount; i++) {
-            zombies.add(new Zombie());
+            zombies.add(new Zombie(this));
         }
     }
 
@@ -53,6 +53,8 @@ public class WorldCreator extends PApplet {
     }
 
     public void detectCollisions() {
+        return;
+        /*
         //if (this.zombies.size() > 0) {
             for (int i = this.humans.size() - 1; i >= 0; i--) {
                 for (int j = this.zombies.size() - 1; j >= 0; j--) {
@@ -78,6 +80,8 @@ public class WorldCreator extends PApplet {
                 }
             }
         //}
+
+         */
     }
 
     public boolean isClose(Human h, Zombie z) {

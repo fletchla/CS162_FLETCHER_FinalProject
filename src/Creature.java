@@ -1,6 +1,6 @@
-import processing.core.PApplet;
 
-abstract class Creature extends PApplet {
+abstract class Creature {
+    WorldCreator w;
 
     private SpawnPoint position;
     private double radius;
@@ -8,10 +8,11 @@ abstract class Creature extends PApplet {
     float xVelocity;
     float yVelocity;
 
-    public Creature(){
+    public Creature(WorldCreator w){
+        this.w = w;
         this.position = new SpawnPoint(0, 0);
         this.colour = 0;
-        this.radius = 50;
+        this.radius = 20;
     }
 
     public SpawnPoint getPosition() {
@@ -22,9 +23,9 @@ abstract class Creature extends PApplet {
     }
 
 
-    public void draw(PApplet p){
-        p.fill(getColor());
-        p.circle(
+    public void draw(WorldCreator w){
+        w.fill(getColor());
+        w.circle(
                 this.getPosition().getX(),
                 this.getPosition().getY(),
                 (float) this.radius
@@ -38,21 +39,21 @@ abstract class Creature extends PApplet {
     }
 
     public void setupSpawnPoint(float min, float max) {
-        float x = random(0, 500);
-        float y = random(min, max);
+        float x = w.random(0, 500);
+        float y = w.random(min, max);
         this.position = new SpawnPoint(x,y);
     }
 
     public void setupColor(int rmin, int rmax, int gmin, int gmax, int bmin, int bmax) {
-        int r = (int) random(rmin, rmax);
-        int g = (int) random(gmin, gmax);
-        int b = (int) random(bmin, bmax);
+        int r = (int) w.random(rmin, rmax);
+        int g = (int) w.random(gmin, gmax);
+        int b = (int) w.random(bmin, bmax);
 
         setColor(r,g,b);
     }
 
     public void setColor(int r, int g, int b){
-        this.colour = color(r, g, b, 255);
+        this.colour = w.color(r, g, b, 255);
     }
 
     public int getColor(){
@@ -76,7 +77,7 @@ abstract class Creature extends PApplet {
     }
 
     public float getJitter(){
-        return (float)random((float)-5, (float)5);
+        return w.random((float)-5, (float)5);
     }
 
     public double getRadius() {
