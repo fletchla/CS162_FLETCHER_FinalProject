@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 abstract class Creature {
     WorldCreator w;
@@ -86,5 +87,9 @@ abstract class Creature {
 
     public void setRadius(double radius) {
         this.radius = radius;
+    }
+
+    public void detectCollision(ArrayList<Creature> c) {
+
     }
 }

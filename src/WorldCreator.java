@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 
 public class WorldCreator extends PApplet {
-    ArrayList<Zombie> zombies = new ArrayList<Zombie>();
-    ArrayList<Human> humans = new ArrayList<Human>();
+    ArrayList<Creature> zombies = new ArrayList<Creature>();
+    ArrayList<Creature> humans = new ArrayList<Creature>();
 
     public void settings() {
         size(500,500);
@@ -26,15 +26,16 @@ public class WorldCreator extends PApplet {
     public void draw() {
         background(250);
 
-        for(Human human: this.humans){
+        for(Creature human: this.humans){
             human.draw(this);
+            human.detectCollision(this.zombies);
         }
 
-        for(Zombie zombie: this.zombies){
+        for(Creature zombie: this.zombies){
             zombie.draw(this);
         }
 
-        detectCollisions();
+        //detectCollisions();
         drawCounters();
 
     }
@@ -53,13 +54,12 @@ public class WorldCreator extends PApplet {
     }
 
     public void detectCollisions() {
-        return;
-        /*
+
         //if (this.zombies.size() > 0) {
             for (int i = this.humans.size() - 1; i >= 0; i--) {
                 for (int j = this.zombies.size() - 1; j >= 0; j--) {
-                    Human h = this.humans.get(i);
-                    Zombie z = this.zombies.get(i);
+                    Creature h = this.humans.get(i);
+                    Creature z = this.zombies.get(i);
 
                     if (this.isClose(h,z) == true) {
                         //they collide and put shit here
@@ -70,7 +70,7 @@ public class WorldCreator extends PApplet {
                         else if (chance < 60) {
                             SpawnPoint p = h.getPosition();
                             this.humans.remove(i);
-                            Zombie z2 = new Zombie();
+                            Creature z2 = new Zombie(this);
                             this.zombies.add(z2);
                             z2.setPosition(p);
                             break;
@@ -81,10 +81,9 @@ public class WorldCreator extends PApplet {
             }
         //}
 
-         */
     }
 
-    public boolean isClose(Human h, Zombie z) {
+    public boolean isClose(Creature h, Creature z) {
         float distance = dist(
                 h.getPosition().getX(),
                 h.getPosition().getY(),
