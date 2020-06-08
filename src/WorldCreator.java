@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class WorldCreator extends PApplet {
     ArrayList<Creature> zombies = new ArrayList<Creature>();
     ArrayList<Creature> humans = new ArrayList<Creature>();
+    ArrayList<ParticleSystem> particles = new ArrayList<ParticleSystem>();
 
     public void settings() {
         size(500,500);
@@ -35,6 +36,11 @@ public class WorldCreator extends PApplet {
             zombie.draw(this);
         }
 
+        for(ParticleSystem ps: this.particles){
+            ps.draw();
+            ps.update();
+        }
+
         drawCounters();
 
     }
@@ -50,6 +56,15 @@ public class WorldCreator extends PApplet {
         text("Zombies: " + this.zombies.size(), 250, 50);
         text("Humans: " + this.humans.size(), 250, 450);
 
+    }
+
+    public void addParticle(SpawnPoint p){
+        ParticleSystem ps = new ParticleSystem(
+                (int) p.getX(),
+                (int) p.getY(),
+                this
+        );
+        this.particles.add(ps);
     }
 
 

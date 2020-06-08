@@ -98,7 +98,7 @@ abstract class Creature {
             if (this.isCloseTo(target)) {
                 //they collide and put shit here
                 if(this.attemptToKill(target)) {
-                    //todo add particles
+                    this.w.addParticle(target.getPosition());
                     targets.remove(i);
                 }
 
