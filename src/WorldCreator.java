@@ -34,6 +34,7 @@ public class WorldCreator extends PApplet {
 
         for(Creature zombie: this.zombies){
             zombie.draw(this);
+            zombie.detectCollision(this.humans);
         }
 
         for(ParticleSystem ps: this.particles){
