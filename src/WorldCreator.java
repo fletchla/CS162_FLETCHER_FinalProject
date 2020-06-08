@@ -2,6 +2,8 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 
 
+
+
 public class WorldCreator extends PApplet {
     ArrayList<Creature> zombies = new ArrayList<Creature>();
     ArrayList<Creature> humans = new ArrayList<Creature>();
@@ -32,7 +34,8 @@ public class WorldCreator extends PApplet {
             human.detectCollision(this.zombies);
         }
 
-        for(Creature zombie: this.zombies){
+        for(int j = this.zombies.size() - 1; j >= 0; j--){
+            Creature zombie = this.zombies.get(j);
             zombie.draw(this);
             zombie.detectCollision(this.humans);
         }
@@ -67,6 +70,8 @@ public class WorldCreator extends PApplet {
         );
         this.particles.add(ps);
     }
+
+
 
 
 

@@ -20,7 +20,11 @@ public class Human extends Creature {
     }
 
     public boolean attemptToKill(Creature target) {
-        return true;
+        double chance = w.random(0,100);
+        //double probability = 45; //45% chance to kill
+        //smaller human = lower probability = less chance to kill
+        double probability = PApplet.map((float)getRadius(), 5, 25, 20, 70);
+        return chance < probability;
     }
 
 
