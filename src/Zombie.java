@@ -7,4 +7,8 @@ public class Zombie extends Creature {
 
     }
 
+    public boolean attemptToKill(Creature target) {
+        return true;
+    }
+
 }
