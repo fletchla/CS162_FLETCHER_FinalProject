@@ -24,7 +24,11 @@ public class Human extends Creature {
         //double probability = 45; //45% chance to kill
         //smaller human = lower probability = less chance to kill
         double probability = PApplet.map((float)getRadius(), 5, 25, 20, 70);
-        return chance < probability;
+        if (chance < probability){
+            w.playDeathSound();
+            return true;
+        }
+        return false;
     }
 
 

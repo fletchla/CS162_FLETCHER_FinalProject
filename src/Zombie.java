@@ -25,8 +25,10 @@ public class Zombie extends Creature {
         double probability = PApplet.map((float)getRadius(), 5, 25, 60, 20);
 
         if(chance < probability){
+            w.playSlurpingSound();
             if(w.random(0,100) < 25){
                 //25% chance to create a zombie
+                w.playConversionSound();
                 Creature z = new Zombie(this.w);
                 z.setRadius(target.getRadius());
                 z.setyVelocity(-1 * target.getyVelocity());

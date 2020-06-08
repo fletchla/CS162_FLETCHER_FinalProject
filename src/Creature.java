@@ -98,24 +98,10 @@ abstract class Creature {
             if (this.isCloseTo(target)) {
                 //they collide and put shit here
                 if(this.attemptToKill(target)) {
+                    w.playSlurpingSound();
                     this.w.addParticle(target.getPosition());
                     targets.remove(i);
                 }
-
-                /*
-                int chance = (int) w.random(0, 100);
-                if (chance < 45) {
-                    this.zombies.remove(i);
-                } else if (chance < 60) {
-                    SpawnPoint p = h.getPosition();
-                    this.humans.remove(i);
-                    Creature z2 = new Zombie(this);
-                    this.zombies.add(z2);
-                    z2.setPosition(p);
-                    break;
-                }
-                System.out.println("They have collided"); //we talked about typewriters
-                */
 
             }
         }
